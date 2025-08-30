@@ -1,0 +1,113 @@
+{% comment %}
+  Visualization Dropdown Snippet
+  Converted from React VisualizeDropdown component
+{% endcomment %}
+
+<div class="visualization-dropdown-container">
+  <div class="visualization-dropdown-content max-w-7xl mx-auto px-6 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Left Menu -->
+      <div class="lg:col-span-1">
+        <div class="space-y-4">
+          <div class="visualization-category-item">
+            <a 
+              href="/pages/room-visualizer"
+              class="visualization-category-link text-left text-[#493657] hover:text-[#F0C85A] transition-colors font-medium py-2 w-full block"
+            >
+              Room Visualizer
+            </a>
+          </div>
+          
+          <div class="visualization-category-item">
+            <a 
+              href="/pages/color-visualizer"
+              class="visualization-category-link text-left text-[#493657] hover:text-[#F0C85A] transition-colors font-medium py-2 w-full block"
+            >
+              Color Visualizer
+            </a>
+          </div>
+          
+          <div class="visualization-category-item">
+            <a 
+              href="/pages/color-matching"
+              class="visualization-category-link text-left text-[#493657] hover:text-[#F0C85A] transition-colors font-medium py-2 w-full block"
+            >
+              Color Matching Tool
+            </a>
+          </div>
+          
+          <div class="mt-6 pt-4 border-t border-gray-200">
+            <a 
+              href="/pages/visualizer"
+              class="visualization-all-link inline-block bg-[#F0C85A] text-[#493657] px-6 py-3 rounded-lg font-medium hover:bg-[#e6b800] transition-colors"
+            >
+              Try All Tools
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Content Area -->
+      <div class="lg:col-span-1">
+        <div class="visualization-preview-area">
+          <div class="text-center">
+            <h3 class="text-2xl font-bold text-[#493657] mb-4">Visualize Your Space</h3>
+            <p class="text-gray-600 mb-6">See how colors will look in your home before you paint.</p>
+            
+            <div class="visualization-preview-card">
+              <img src="{{ 'Inspiration/Living/living1.jpg' | asset_url }}" alt="Room Visualization" class="w-full h-40 object-cover rounded-lg mb-3">
+              <p class="text-sm text-[#493657] font-medium">Upload a photo and try different colors</p>
+            </div>
+            
+            <div class="mt-4">
+              <a href="/pages/room-visualizer" class="text-[#493657] hover:text-[#F0C85A] font-medium">
+                Start Visualizing →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<style>
+  .visualization-dropdown-container {
+    background: white;
+    border-top: 1px solid #e5e0d8;
+  }
+  
+  .visualization-category-link {
+    text-decoration: none;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+  
+  .visualization-category-link:hover {
+    background-color: #f9f6f2;
+    transform: translateX(4px);
+  }
+  
+  .visualization-preview-area {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .visualization-preview-card {
+    text-align: center;
+  }
+  
+  .visualization-preview-card img {
+    transition: transform 0.2s ease;
+  }
+  
+  .visualization-preview-card:hover img {
+    transform: scale(1.02);
+  }
+</style>

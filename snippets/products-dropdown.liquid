@@ -1,0 +1,162 @@
+{% comment %}
+  Products Dropdown Snippet
+  Converted from React ProductsDropdown component
+{% endcomment %}
+
+<div class="products-dropdown-container">
+  <div class="products-dropdown-content max-w-7xl mx-auto px-6 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      
+      <!-- Left Menu -->
+      <div class="lg:col-span-1">
+        <div class="space-y-4">
+          {% assign categories = "Interior,Exterior,StainSealer,Industrial,Enamel,All" | split: "," %}
+          {% assign category_labels = "INTERIOR,EXTERIOR,STAIN & SEALER,INDUSTRIAL,ENAMEL,SHOW ALL PRODUCTS" | split: "," %}
+          
+          {% for category in categories %}
+            {% assign category_index = forloop.index0 %}
+            <div class="category-item">
+              <button 
+                class="category-button text-left text-[#493657] hover:text-[#F0C85A] transition-colors font-medium py-2 w-full flex justify-between items-center"
+                onclick="selectCategory('{{ category }}', this)"
+                data-category="{{ category }}"
+              >
+                {{ category_labels[category_index] }}
+                <span class="category-arrow transform transition-transform">▶</span>
+              </button>
+              
+              {% if category != "All" %}
+                <div class="submenu hidden pl-4 py-2 space-y-2" data-submenu="{{ category }}">
+                  {% comment %}
+                    This will be populated with products from the selected category
+                    We'll need to create a products data structure or use Shopify collections
+                  {% endcomment %}
+                  <div class="submenu-placeholder text-sm text-gray-500">
+                    Loading {{ category }} products...
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      
+      <!-- Right Content Area -->
+      <div class="lg:col-span-3">
+        <div class="product-preview-area">
+          <div class="text-center text-gray-500">
+            <p>Select a category to view products</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<style>
+  .products-dropdown-container {
+    background: white;
+    border-top: 1px solid #e5e0d8;
+  }
+  
+  .category-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .category-button:hover {
+    background-color: #f9f6f2;
+  }
+  
+  .category-button.active {
+    color: #F0C85A;
+    font-weight: 600;
+  }
+  
+  .category-arrow.active {
+    transform: rotate(90deg);
+  }
+  
+  .submenu {
+    transition: all 0.3s ease;
+  }
+  
+  .submenu.show {
+    display: block !important;
+  }
+  
+  .product-preview-area {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
+<script>
+  function selectCategory(category, button) {
+    // Remove active class from all buttons
+    document.querySelectorAll('.category-button').forEach(btn => {
+      btn.classList.remove('active');
+      btn.querySelector('.category-arrow').classList.remove('active');
+    });
+    
+    // Add active class to clicked button
+    button.classList.add('active');
+    button.querySelector('.category-arrow').classList.add('active');
+    
+    // Handle submenu toggle
+    if (category !== 'All') {
+      const submenu = button.parentElement.querySelector(`[data-submenu="${category}"]`);
+      const isVisible = submenu.classList.contains('show');
+      
+      // Hide all submenus
+      document.querySelectorAll('.submenu').forEach(menu => {
+        menu.classList.remove('show');
+      });
+      
+      // Show/hide current submenu
+      if (!isVisible) {
+        submenu.classList.add('show');
+      }
+    } else {
+      // Navigate to products page
+      window.location.href = '/collections/all';
+    }
+    
+    // Update product preview area
+    updateProductPreview(category);
+  }
+  
+  function updateProductPreview(category) {
+    const previewArea = document.querySelector('.product-preview-area');
+    
+    if (category === 'All') {
+      previewArea.innerHTML = `
+        <div class="text-center">
+          <p class="text-lg font-medium text-[#493657] mb-4">All Products</p>
+          <a href="/collections/all" class="inline-block bg-[#F0C85A] text-[#493657] px-6 py-3 rounded-lg font-medium hover:bg-[#e6b800] transition-colors">
+            View All Products
+          </a>
+        </div>
+      `;
+    } else {
+      // Here you would typically fetch products from Shopify's API
+      // For now, we'll show a placeholder
+      previewArea.innerHTML = `
+        <div class="text-center">
+          <p class="text-lg font-medium text-[#493657] mb-4">{{ category }} Products</p>
+          <div class="text-sm text-gray-500">
+            <p>Products will be loaded from Shopify collections</p>
+            <p class="mt-2">Category: ${category}</p>
+          </div>
+        </div>
+      `;
+    }
+  }
+</script>

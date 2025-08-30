@@ -1,0 +1,52 @@
+{% comment %}
+  Mobile Colors Dropdown Snippet
+{% endcomment %}
+
+<div class="mobile-colors-dropdown w-full flex flex-col items-start">
+  <button
+    onclick="toggleMobileColors()"
+    class="mobile-category-button text-[#493657] hover:text-[#F0C85A] flex justify-between w-full"
+  >
+    <span>Colors</span>
+    <span class="mobile-arrow transform transition-transform">▶</span>
+  </button>
+  
+  <div class="mobile-submenu transition-all duration-300 ease-in-out overflow-hidden max-h-0 opacity-0 w-full">
+    <div class="pl-4 py-2 flex flex-col gap-2">
+      {% assign color_categories = "Warm,Neutral,Cool,Accent,Earth" | split: "," %}
+      
+      {% for category in color_categories %}
+        <div class="mobile-category-item w-full">
+          <a
+            href="/pages/colors/{{ category | downcase }}"
+            class="mobile-subcategory-link text-left text-[#493657] hover:text-[#F0C85A] py-1 w-full block"
+          >
+            {{ category }} Colors
+          </a>
+        </div>
+      {% endfor %}
+      
+      <div class="pt-2">
+        <a href="/pages/colors" class="text-[#493657] hover:text-[#F0C85A] font-medium">
+          View All Colors
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleMobileColors() {
+    const submenu = document.querySelector('.mobile-colors-dropdown .mobile-submenu');
+    const arrow = document.querySelector('.mobile-colors-dropdown .mobile-arrow');
+    const isVisible = submenu.classList.contains('show');
+    
+    if (isVisible) {
+      submenu.classList.remove('show');
+      arrow.classList.remove('active');
+    } else {
+      submenu.classList.add('show');
+      arrow.classList.add('active');
+    }
+  }
+</script>

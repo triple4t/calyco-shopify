@@ -1,0 +1,30 @@
+{
+  "current": {
+    "colors_accent_1": "#532E8A",
+    "colors_accent_2": "#C8A951",
+    "colors_solid_button_labels": "#FFFFFF",
+    "type_header_font": "assistant_n4",
+    "type_body_font": "assistant_n4",
+    "page_width": 1200,
+    "spacing_sections": 36,
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo_width": 100,
+          "menu": "main-menu",
+          "show_line_separator": true,
+          "enable_sticky_header": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "show_social": true,
+          "menu": "footer"
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

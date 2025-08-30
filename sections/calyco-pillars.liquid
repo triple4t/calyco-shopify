@@ -1,0 +1,39 @@
+{% comment %}
+  Calyco Pillars Section (React)
+  This section wraps the React Pillars component
+{% endcomment %}
+
+<div
+  data-react-root="Pillars"
+  data-props='{
+    "title": "{{ section.settings.title | escape }}",
+    "subtitle": "{{ section.settings.subtitle | escape }}"
+  }'>
+</div>
+
+{% schema %}
+{
+  "name": "Calyco Pillars (React)",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Why Choose Calyco"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Section Subtitle",
+      "default": "Premium quality meets environmental responsibility"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Calyco Pillars (React)"
+    }
+  ]
+}
+{% endschema %}

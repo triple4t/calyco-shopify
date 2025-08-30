@@ -1,0 +1,39 @@
+{% comment %}
+  Calyco Features Section (React)
+  This section wraps the React Features component
+{% endcomment %}
+
+<div
+  data-react-root="Features"
+  data-props='{
+    "title": "{{ section.settings.title | escape }}",
+    "subtitle": "{{ section.settings.subtitle | escape }}"
+  }'>
+</div>
+
+{% schema %}
+{
+  "name": "Calyco Features (React)",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Features That Matter"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Section Subtitle",
+      "default": "Built for performance and sustainability"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Calyco Features (React)"
+    }
+  ]
+}
+{% endschema %}
