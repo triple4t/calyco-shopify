@@ -1,0 +1,39 @@
+{% comment %}
+  Calyco Color Strip Section (React)
+  This section wraps the React ColorStrip component
+{% endcomment %}
+
+<div
+  data-react-root="ColorStrip"
+  data-props='{
+    "title": "{{ section.settings.title | escape }}",
+    "subtitle": "{{ section.settings.subtitle | escape }}"
+  }'>
+</div>
+
+{% schema %}
+{
+  "name": "Calyco Color Strip (React)",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Our Color Palette"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Section Subtitle",
+      "default": "Curated colors for every mood and space"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Calyco Color Strip (React)"
+    }
+  ]
+}
+{% endschema %}

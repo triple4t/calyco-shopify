@@ -1,0 +1,35 @@
+{
+    "sections": {
+        "calyco_hero": {
+            "type": "calyco-hero",
+            "settings": {
+                "bg": "",
+                "headline": "Get in Touch",
+                "subhead": "Have questions about our products? Need color advice? We're here to help you create the perfect space.",
+                "cta_label": "Send Message",
+                "cta_url": "#contact-form"
+            }
+        },
+        "calyco_features": {
+            "type": "calyco-features",
+            "settings": {
+                "title": "How We Can Help",
+                "subtitle": "Expert support for all your painting needs"
+            }
+        },
+        "calyco_cta": {
+            "type": "calyco-cta",
+            "settings": {
+                "title": "Ready to Start Your Project?",
+                "subtitle": "Let's discuss how Calyco can transform your space",
+                "cta_label": "Get Quote",
+                "cta_url": "/pages/quote"
+            }
+        }
+    },
+    "order": [
+        "calyco_hero",
+        "calyco_features",
+        "calyco_cta"
+    ]
+}

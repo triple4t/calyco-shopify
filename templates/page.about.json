@@ -1,0 +1,35 @@
+{
+  "sections": {
+    "calyco_hero": {
+      "type": "calyco-hero",
+      "settings": {
+        "bg": "",
+        "headline": "About Calyco",
+        "subhead": "We're passionate about creating premium eco-friendly paints that transform spaces while protecting our planet.",
+        "cta_label": "Learn More",
+        "cta_url": "/pages/sustainability"
+      }
+    },
+    "calyco_pillars": {
+      "type": "calyco-pillars",
+      "settings": {
+        "title": "Our Story",
+        "subtitle": "Building a sustainable future, one brushstroke at a time"
+      }
+    },
+    "calyco_cta": {
+      "type": "calyco-cta",
+      "settings": {
+        "title": "Join Our Mission",
+        "subtitle": "Be part of the sustainable paint revolution",
+        "cta_label": "Contact Us",
+        "cta_url": "/pages/contact"
+      }
+    }
+  },
+  "order": [
+    "calyco_hero",
+    "calyco_pillars",
+    "calyco_cta"
+  ]
+}

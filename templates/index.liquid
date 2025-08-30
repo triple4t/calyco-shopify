@@ -1,0 +1,176 @@
+{% comment %}
+  Calyco Home Page Template
+  Converted from React Home component
+{% endcomment %}
+
+<div class="home-page">
+  <!-- Hero Section -->
+  <section class="hero-section relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#f9f6f2] to-[#e5e0d8]">
+    <div class="hero-content text-center max-w-4xl mx-auto px-6">
+      <h1 class="hero-title text-5xl md:text-7xl font-bold text-[#493657] mb-6">
+        Transform Your Space
+      </h1>
+      <p class="hero-subtitle text-xl md:text-2xl text-[#493657] mb-8 max-w-2xl mx-auto">
+        Discover premium eco-friendly paints that bring your vision to life. 
+        From interior elegance to exterior protection, we've got you covered.
+      </p>
+      <div class="hero-buttons flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/collections/all" class="btn-primary text-lg px-8 py-4">
+          Explore Products
+        </a>
+        <a href="/pages/color-visualizer" class="btn-secondary text-lg px-8 py-4">
+          Try Color Visualizer
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Categories -->
+  <section class="featured-categories py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title text-4xl font-bold text-center text-[#493657] mb-16">
+        Our Product Categories
+      </h2>
+      
+      <div class="categories-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="category-card group">
+          <div class="category-image overflow-hidden rounded-lg mb-4 bg-[#f9f6f2] h-48 flex items-center justify-center">
+            <span class="text-[#493657] text-lg font-medium">Interior Paints</span>
+          </div>
+          <h3 class="category-title text-2xl font-semibold text-[#493657] mb-3">
+            Interior
+          </h3>
+          <p class="category-description text-gray-600 mb-4">
+            Premium interior paints for every room
+          </p>
+          <a href="/collections/interior" class="text-[#F0C85A] hover:text-[#e6b800] font-medium">
+            Explore Interior →
+          </a>
+        </div>
+        
+        <div class="category-card group">
+          <div class="category-image overflow-hidden rounded-lg mb-4 bg-[#f9f6f2] h-48 flex items-center justify-center">
+            <span class="text-[#493657] text-lg font-medium">Exterior Paints</span>
+          </div>
+          <h3 class="category-title text-2xl font-semibold text-[#493657] mb-3">
+            Exterior
+          </h3>
+          <p class="category-description text-gray-600 mb-4">
+            High-performance exterior protection
+          </p>
+          <a href="/collections/exterior" class="text-[#F0C85A] hover:text-[#e6b800] font-medium">
+            Explore Exterior →
+          </a>
+        </div>
+        
+        <div class="category-card group">
+          <div class="category-image overflow-hidden rounded-lg mb-4 bg-[#f9f6f2] h-48 flex items-center justify-center">
+            <span class="text-[#493657] text-lg font-medium">Stains & Sealers</span>
+          </div>
+          <h3 class="category-title text-2xl font-semibold text-[#493657] mb-3">
+            Stains & Sealers
+          </h3>
+          <p class="category-description text-gray-600 mb-4">
+            Professional stains and sealers
+          </p>
+          <a href="/collections/stain-sealer" class="text-[#F0C85A] hover:text-[#e6b800] font-medium">
+            Explore Stains →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Calyco -->
+  <section class="why-choose py-20 bg-[#f9f6f2]">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title text-4xl font-bold text-center text-[#493657] mb-16">
+        Why Choose Calyco?
+      </h2>
+      
+      <div class="features-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="feature-item text-center">
+          <div class="feature-icon w-16 h-16 bg-[#F0C85A] rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-[#493657]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title text-xl font-semibold text-[#493657] mb-2">Premium Quality</h3>
+          <p class="feature-description text-gray-600">Industry-leading paint formulations</p>
+        </div>
+        
+        <div class="feature-item text-center">
+          <div class="feature-icon w-16 h-16 bg-[#F0C85A] rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-[#493657]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title text-xl font-semibold text-[#493657] mb-2">Eco-Friendly</h3>
+          <p class="feature-description text-gray-600">Safe for your family and environment</p>
+        </div>
+        
+        <div class="feature-item text-center">
+          <div class="feature-icon w-16 h-16 bg-[#F0C85A] rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-[#493657]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title text-xl font-semibold text-[#493657] mb-2">Fast Drying</h3>
+          <p class="feature-description text-gray-600">Quick results for busy lifestyles</p>
+        </div>
+        
+        <div class="feature-item text-center">
+          <div class="feature-icon w-16 h-16 bg-[#F0C85A] rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-[#493657]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title text-xl font-semibold text-[#493657] mb-2">24/7 Support</h3>
+          <p class="feature-description text-gray-600">Expert help when you need it</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section py-20 bg-[#493657]">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="cta-title text-4xl font-bold text-white mb-6">
+        Ready to Transform Your Space?
+      </h2>
+      <p class="cta-description text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Join thousands of satisfied customers who have transformed their homes with Calyco paints.
+      </p>
+      <div class="cta-buttons flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/collections/all" class="bg-[#F0C85A] text-[#493657] px-8 py-4 rounded-lg font-medium hover:bg-[#e6b800] transition-colors text-lg">
+          Shop Now
+        </a>
+        <a href="/pages/contact" class="border-2 border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white hover:text-[#493657] transition-colors text-lg">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  .hero-section {
+    margin-top: 80px; /* Account for fixed header */
+  }
+  
+  .category-card {
+    transition: transform 0.3s ease;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .feature-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-item:hover .feature-icon {
+    transform: scale(1.1);
+  }
+</style>

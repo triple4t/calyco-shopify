@@ -1,0 +1,119 @@
+{% comment %}
+  Mobile Products Dropdown Snippet
+  Converted from React ProductsDropdown mobile version
+{% endcomment %}
+
+<div class="mobile-products-dropdown w-full flex flex-col items-start">
+  <button
+    onclick="toggleMobileProducts()"
+    class="mobile-category-button text-[#493657] hover:text-[#F0C85A] flex justify-between w-full"
+  >
+    <span>Products</span>
+    <span class="mobile-arrow transform transition-transform">▶</span>
+  </button>
+  
+  <div class="mobile-submenu transition-all duration-300 ease-in-out overflow-hidden max-h-0 opacity-0 w-full">
+    <div class="pl-4 py-2 flex flex-col gap-2">
+      {% assign categories = "Interior,Exterior,StainSealer,Industrial,Enamel,All" | split: "," %}
+      {% assign category_labels = "INTERIOR,EXTERIOR,STAIN & SEALER,INDUSTRIAL,ENAMEL,SHOW ALL PRODUCTS" | split: "," %}
+      
+      {% for category in categories %}
+        {% assign category_index = forloop.index0 %}
+        <div class="mobile-category-item w-full">
+          <button
+            onclick="handleMobileCategoryClick('{{ category }}')"
+            class="mobile-subcategory-button text-left text-[#493657] hover:text-[#F0C85A] py-1 w-full flex justify-between items-center"
+          >
+            {{ category_labels[category_index] }}
+            {% if category != "All" %}
+              <span class="mobile-submenu-arrow transform transition-transform">▶</span>
+            {% endif %}
+          </button>
+          
+          {% if category != "All" %}
+            <div class="mobile-submenu-content transition-all duration-300 ease-in-out overflow-hidden max-h-0 opacity-0 pl-4">
+              <div class="mobile-submenu-placeholder text-sm text-gray-500 py-2">
+                {{ category }} products will be loaded...
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .mobile-category-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 0;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .mobile-subcategory-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 6px 0;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .mobile-arrow.active,
+  .mobile-submenu-arrow.active {
+    transform: rotate(90deg);
+  }
+  
+  .mobile-submenu.show {
+    max-height: 1000px !important;
+    opacity: 1 !important;
+  }
+  
+  .mobile-submenu-content.show {
+    max-height: 500px !important;
+    opacity: 1 !important;
+  }
+</style>
+
+<script>
+  function toggleMobileProducts() {
+    const submenu = document.querySelector('.mobile-submenu');
+    const arrow = document.querySelector('.mobile-arrow');
+    const isVisible = submenu.classList.contains('show');
+    
+    if (isVisible) {
+      submenu.classList.remove('show');
+      arrow.classList.remove('active');
+    } else {
+      submenu.classList.add('show');
+      arrow.classList.add('active');
+    }
+  }
+  
+  function handleMobileCategoryClick(category) {
+    if (category === 'All') {
+      window.location.href = '/collections/all';
+    } else {
+      const submenuContent = event.target.parentElement.querySelector('.mobile-submenu-content');
+      const arrow = event.target.querySelector('.mobile-submenu-arrow');
+      
+      if (submenuContent) {
+        const isVisible = submenuContent.classList.contains('show');
+        
+        if (isVisible) {
+          submenuContent.classList.remove('show');
+          arrow.classList.remove('active');
+        } else {
+          submenuContent.classList.add('show');
+          arrow.classList.add('active');
+        }
+      }
+    }
+  }
+</script>

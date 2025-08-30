@@ -1,0 +1,66 @@
+{% comment %}
+  Mobile Visualization Dropdown Snippet
+{% endcomment %}
+
+<div class="mobile-visualization-dropdown w-full flex flex-col items-start">
+  <button
+    onclick="toggleMobileVisualization()"
+    class="mobile-category-button text-[#493657] hover:text-[#F0C85A] flex justify-between w-full"
+  >
+    <span>Visualize</span>
+    <span class="mobile-arrow transform transition-transform">▶</span>
+  </button>
+  
+  <div class="mobile-submenu transition-all duration-300 ease-in-out overflow-hidden max-h-0 opacity-0 w-full">
+    <div class="pl-4 py-2 flex flex-col gap-2">
+      <div class="mobile-category-item w-full">
+        <a
+          href="/pages/room-visualizer"
+          class="mobile-subcategory-link text-left text-[#493657] hover:text-[#F0C85A] py-1 w-full block"
+        >
+          Room Visualizer
+        </a>
+      </div>
+      
+      <div class="mobile-category-item w-full">
+        <a
+          href="/pages/color-visualizer"
+          class="mobile-subcategory-link text-left text-[#493657] hover:text-[#F0C85A] py-1 w-full block"
+        >
+          Color Visualizer
+        </a>
+      </div>
+      
+      <div class="mobile-category-item w-full">
+        <a
+          href="/pages/color-matching"
+          class="mobile-subcategory-link text-left text-[#493657] hover:text-[#F0C85A] py-1 w-full block"
+        >
+          Color Matching Tool
+        </a>
+      </div>
+      
+      <div class="pt-2">
+        <a href="/pages/visualizer" class="text-[#493657] hover:text-[#F0C85A] font-medium">
+          Try All Tools
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleMobileVisualization() {
+    const submenu = document.querySelector('.mobile-visualization-dropdown .mobile-submenu');
+    const arrow = document.querySelector('.mobile-visualization-dropdown .mobile-arrow');
+    const isVisible = submenu.classList.contains('show');
+    
+    if (isVisible) {
+      submenu.classList.remove('show');
+      arrow.classList.remove('active');
+    } else {
+      submenu.classList.add('show');
+      arrow.classList.add('active');
+    }
+  }
+</script>

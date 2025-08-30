@@ -1,0 +1,59 @@
+{
+  "sections": {
+    "calyco_hero": {
+      "type": "calyco-hero",
+      "settings": {
+        "bg": "",
+        "headline": "Transform Your Space",
+        "subhead": "Discover premium eco-friendly paints that bring your vision to life. From interior elegance to exterior protection, we've got you covered.",
+        "cta_label": "Shop Now",
+        "cta_url": "/collections/all"
+      }
+    },
+    "calyco_pillars": {
+      "type": "calyco-pillars",
+      "settings": {
+        "title": "Why Choose Calyco",
+        "subtitle": "Premium quality meets environmental responsibility"
+      }
+    },
+    "calyco_color_strip": {
+      "type": "calyco-color-strip",
+      "settings": {
+        "title": "Our Color Palette",
+        "subtitle": "Curated colors for every mood and space"
+      }
+    },
+    "calyco_features": {
+      "type": "calyco-features",
+      "settings": {
+        "title": "Features That Matter",
+        "subtitle": "Built for performance and sustainability"
+      }
+    },
+    "calyco_testimonials": {
+      "type": "calyco-testimonials",
+      "settings": {
+        "title": "What Our Customers Say",
+        "subtitle": "Real experiences from real people"
+      }
+    },
+    "calyco_cta": {
+      "type": "calyco-cta",
+      "settings": {
+        "title": "Ready to Transform Your Space?",
+        "subtitle": "Start your journey with Calyco today",
+        "cta_label": "Get Started",
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": [
+    "calyco_hero",
+    "calyco_pillars",
+    "calyco_color_strip",
+    "calyco_features",
+    "calyco_testimonials",
+    "calyco_cta"
+  ]
+}

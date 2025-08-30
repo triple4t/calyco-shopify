@@ -1,0 +1,99 @@
+{% comment %}
+  Inspirations Dropdown Snippet
+  Converted from React InspirationsDropdown component
+{% endcomment %}
+
+<div class="inspirations-dropdown-container">
+  <div class="inspirations-dropdown-content max-w-7xl mx-auto px-6 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <!-- Left Menu -->
+      <div class="lg:col-span-1">
+        <div class="space-y-4">
+          {% assign inspiration_categories = "Kitchen,Bedroom,Hallway,Living,Bathroom,Dining,Office,Exterior" | split: "," %}
+          
+          {% for category in inspiration_categories %}
+            <div class="inspiration-category-item">
+              <a 
+                href="/pages/inspiration/{{ category | downcase }}"
+                class="inspiration-category-link text-left text-[#493657] hover:text-[#F0C85A] transition-colors font-medium py-2 w-full block"
+              >
+                {{ category }} Inspiration
+              </a>
+            </div>
+          {% endfor %}
+          
+          <div class="mt-6 pt-4 border-t border-gray-200">
+            <a 
+              href="/pages/inspiration"
+              class="inspiration-all-link inline-block bg-[#F0C85A] text-[#493657] px-6 py-3 rounded-lg font-medium hover:bg-[#e6b800] transition-colors"
+            >
+              View All Inspirations
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Content Area -->
+      <div class="lg:col-span-2">
+        <div class="inspiration-preview-area">
+          <div class="text-center">
+            <h3 class="text-2xl font-bold text-[#493657] mb-4">Get Inspired</h3>
+            <p class="text-gray-600 mb-6">Discover beautiful color combinations and design ideas for every room in your home.</p>
+            
+            <div class="grid grid-cols-2 gap-4">
+              <div class="inspiration-preview-card">
+                <img src="{{ 'Inspiration/Kitchen/kitchen1.jpg' | asset_url }}" alt="Kitchen Inspiration" class="w-full h-32 object-cover rounded-lg">
+                <p class="text-sm font-medium text-[#493657] mt-2">Kitchen</p>
+              </div>
+              <div class="inspiration-preview-card">
+                <img src="{{ 'Inspiration/Living/living1.jpg' | asset_url }}" alt="Living Room Inspiration" class="w-full h-32 object-cover rounded-lg">
+                <p class="text-sm font-medium text-[#493657] mt-2">Living Room</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<style>
+  .inspirations-dropdown-container {
+    background: white;
+    border-top: 1px solid #e5e0d8;
+  }
+  
+  .inspiration-category-link {
+    text-decoration: none;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+  
+  .inspiration-category-link:hover {
+    background-color: #f9f6f2;
+    transform: translateX(4px);
+  }
+  
+  .inspiration-preview-area {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .inspiration-preview-card {
+    text-align: center;
+  }
+  
+  .inspiration-preview-card img {
+    transition: transform 0.2s ease;
+  }
+  
+  .inspiration-preview-card:hover img {
+    transform: scale(1.05);
+  }
+</style>
