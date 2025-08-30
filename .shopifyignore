@@ -1,0 +1,4 @@
+# Development files
+src/
+node_modules/
+*.map
