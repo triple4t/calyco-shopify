@@ -1,0 +1,47 @@
+# Development files
+src/
+node_modules/
+*.map
+.git/
+.github/
+.gitignore
+.shopifyignore
+README.md
+package.json
+package-lock.json
+vite.config.js
+tailwind.config.js
+postcss.config.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Heavy assets (exclude to keep theme under 50MB)
+assets/Assets/
+assets/Api/
+assets/*.png
+assets/*.jpg
+assets/*.webp
+assets/*.mp4
+!assets/calyco.js
+!assets/calyco.css
+!assets/Logo.png
+
+# Build tools
+.eslintrc*
+.prettierrc*
+.editorconfig
+
+# Documentation
+*.md
+docs/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
